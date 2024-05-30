@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockMove", "RockMove\RockMove.csproj", "{8F2B2B60-7F79-4FB0-9BB7-55B1C2C3C00C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F2B2B60-7F79-4FB0-9BB7-55B1C2C3C00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2B2B60-7F79-4FB0-9BB7-55B1C2C3C00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2B2B60-7F79-4FB0-9BB7-55B1C2C3C00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2B2B60-7F79-4FB0-9BB7-55B1C2C3C00C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C5D048D-EA45-425C-AE75-B580BCDB3439}
+	EndGlobalSection
+EndGlobal

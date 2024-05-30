@@ -1,0 +1,29 @@
+﻿@page
+@model RockMove.Pages.ArtistViewModel
+@{
+    ViewData["Title"] = "ArtistView";
+}
+
+<h1>Artist View</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Period</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Artist artist in Model.Artists)
+        {
+            <tr>
+                <td>@artist.Name</td>
+                <td>@artist.Genre</td>
+                <td>@artist.Period</td>
+                <td>@artist.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

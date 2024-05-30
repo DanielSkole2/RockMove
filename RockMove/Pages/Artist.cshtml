@@ -1,0 +1,41 @@
+﻿@page
+@model RockMove.Pages.ArtistModel
+@{
+    ViewData["Title"] = "Artists";
+}
+
+<h1>Artists</h1>
+<!-- Creating a html table -->
+<table class="table">
+    <!--Defines the header section of the table-->
+    <thead>
+        <tr>
+            <!--Defines a header cell for the for the different columns such as "Name", "Period" etc.-->
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Period</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--Iterates over each Artist object in the Artists' collection from the model-->
+        @foreach (Artist artist in Model.Artists)
+        {
+            <tr>
+                <!--Displays the property (Name, Genre, Period and description) of the current Artist object in a table cell for-->
+                <td>@artist.Name</td>
+                <td>@artist.Genre</td>
+                <td>@artist.Period</td>
+                <td>@artist.Description</td>
+                <td>
+                    <!--Here we create links that route to editartist page and one have routes to the deleteartist page (it uses the current artist id as parameter -->
+                    <a asp-page="./EditArtist" asp-route-id="@artist.Id">Edit</a> |
+                    <a asp-page="./DeleteArtist" asp-route-id="@artist.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!--Here we create a link that route to createartist page-->
+<a asp-page="./CreateArtist">Create New</a>

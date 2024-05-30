@@ -1,0 +1,41 @@
+﻿@page
+@model RockMove.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+    body {
+        background-image: url('/Pictures/Ragnarock2.PNG');
+        background-size: cover; /* Resize background to fit the screen */
+        background-repeat: no-repeat; /* Prevent repetition of the image */
+    }
+
+    .centered {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        color: lightcyan; /* Set header color to light blue */
+        font-family: Uncommon JNL
+    }
+</style>
+<style>
+    .Forside {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }</style>
+<div class="centered">
+    <form method="post" asp-area="" asp-page="/CustomerLogin">
+        <button type="submit" class="btn btn-primary">Start Tour</button>
+    </form>
+</div>
+
+<div class="Forside">
+    <h1>Velkommen til Rockmuseet RagnaRock!</h1>
+</div>

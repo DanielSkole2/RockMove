@@ -1,0 +1,59 @@
+﻿@page
+@model RockMove.Pages.AudioFilesModel
+@{
+    ViewData["Title"] = "Audio Files";
+}
+
+<h1>Audio Files</h1>
+
+<ul>
+    @foreach (RockMove.Pages.AudioFil audioFile in Model.AudioFiles)
+    {
+        <li class="audio-file-item">
+            <!--// This line starts a loop over each audio file in the Model's list of AudioFiles-->
+            <p class="file-name">@audioFile.FileName</p>
+            <div class="audio-player-container">
+                <audio controls class="audio-player">
+                    <source src="~/@audioFile.AudioFilePath" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="description-container">
+                <!--// This line starts a container for the audio file's description-->
+                <p class="description">@Html.Raw(audioFile.Description.Replace("\r\n", "<br>").Replace("\n", "<br>"))</p>
+                <!--// The line above  displays the description of the current audio file, with line breaks converted to HTML <br> tags.-->
+            </div>
+        </li>
+    }
+</ul>
+
+<style>
+    .audio-file-item {
+        margin-bottom: 20px;
+    }
+    /*This rule adds a bottom margin of 20 pixels to elements
+        with our class audio-file-item. The rule creates spacing between these elements and their subsequent siblings.*/
+
+    .file-name {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .audio-player-container {
+        margin-bottom: 10px;
+    }
+
+    .audio-player {
+        display: block;
+    }
+
+    .description-container {
+        margin-left: 30px;
+        max-width: 800px; /* Maximum width for description container */
+        word-wrap: break-word; /* Wrap long words */
+    }
+
+    .description {
+        margin-top: 5px;
+    }
+</style>

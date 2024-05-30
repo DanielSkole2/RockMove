@@ -1,0 +1,22 @@
+﻿@page
+@model RockMove.Pages.CustomerLoginModel
+@{
+    ViewData["Title"] = "Customer Login";
+}
+
+<h1>Customer Login</h1>
+
+@if (Model.InvalidCredentials == false)
+{
+    <div class="alert alert-danger" role="alert">
+        Invalid customer ID. Please try again.
+    </div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="customerId">Customer ID</label>
+        <input type="text" class="form-control" id="customerId" name="CustomerId" placeholder="Enter customer ID" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

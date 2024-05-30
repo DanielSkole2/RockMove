@@ -1,0 +1,64 @@
+﻿@page
+@model RockMove.Pages.EmployeeDashboardModel
+@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<h1>Employee Dashboard</h1>
+
+<!-- Go to AudioFiles URL -->
+<form method="get" asp-page="/AudioFiles" class="mb-3">
+    <button type="submit" class="btn btn-primary">Go to Audio Files</button>
+</form>
+
+<!-- Go to Manage Artist URL -->
+<form method="get" asp-page="/Artist" class="mb-3">
+    <button type="submit" class="btn btn-primary">Manage Artists</button>
+</form>
+
+
+
+<!-- Upload Audio File Form -->
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="audioFile">Upload Audio File</label>
+        <input type="file" class="form-control-file" id="audioFile" name="audioFile" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+<!-- Display List of Audio Files -->
+@if (Model.AudioFiles != null && Model.AudioFiles.Any())
+{
+    <h2>Existing Audio Files:</h2>
+    <ul>
+        @foreach (string audioFile in Model.AudioFiles)
+        {
+            <li>
+                <span>@audioFile</span>
+                @if (Model.AudioDescriptions.ContainsKey(audioFile))
+                {
+                    <p>Description: @Model.AudioDescriptions[audioFile]</p>
+                }
+                <form method="post" asp-page-handler="Delete" asp-route-fileName="@audioFile">
+                    <button type="submit" class="btn btn-danger">Delete Audio File</button>
+                </form>
+
+                <!-- Form to add or update description -->
+                <form method="post" asp-page-handler="SaveDescription" id="descriptionForm_@audioFile">
+                    <div class="form-group">
+                        <label for="description_@audioFile">Description:</label>
+                        <textarea class="form-control" id="description_@audioFile" name="description" rows="3">@Model.AudioDescriptions.GetValueOrDefault(audioFile)</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Description</button>
+                    <div style="margin-bottom: 50px;"></div> <!-- Here is a gap after the button -->
+                    <input type="hidden" name="audioFileName" value="@audioFile" />
+                </form>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No audio files found.</p>
+}

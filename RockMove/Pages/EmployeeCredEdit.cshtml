@@ -1,0 +1,85 @@
+﻿@page
+@model EmployeeCredEditModel
+@{
+    ViewData["Title"] = "Employee Credential Management";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Form to add new employee credentials -->
+<p><strong>Here you can add a new employee</strong></p>
+<form method="post" action="">
+    <div class="form-group">
+        <label for="newUsername">New Username:</label>
+        <input type="text" class="form-control" id="newUsername" name="NewUsername" required>
+    </div>
+    <div class="form-group">
+        <label for="newPassword">New Password:</label>
+        <input type="password" class="form-control" id="newPassword" name="NewPassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Employee</button>
+</form>
+
+<!-- Display current employee credentials -->
+<h2>Employee Credentials:</h2>
+<ul>
+    @if (Model.EmployeeCredentials != null)
+    {
+        @foreach (KeyValuePair<string, string> pair in Model.EmployeeCredentials)
+        {
+            <li>Username: @pair.Key, Password: @pair.Value</li>
+        }
+    }
+    else
+    {
+        <li>No employee credentials found.</li>
+    }
+</ul>
+
+<!-- Form to update employee credentials -->
+<p><strong>Here you can change your employee's credentials</strong></p>
+<form method="post" asp-page-handler="UpdateCredentials">
+    <div class="form-group">
+        <label for="username">The Username:</label>
+        <input type="text" class="form-control" id="username" name="OldUsername" required>
+    </div>
+    <div class="form-group">
+        <label for="oldPassword">Current Password:</label>
+        <input type="password" class="form-control" id="oldPassword" name="OldPassword" required>
+    </div>
+    <div class="form-group">
+        <label for="newPassword">New Password:</label>
+        <input type="password" class="form-control" id="newPassword" name="NewPassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save updated credentials</button>
+</form>
+
+<!-- Error message for incorrect update credentials -->
+@if (ViewData["UpdateCredentialsError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["UpdateCredentialsError"]
+    </div>
+}
+
+<!-- Form to delete employee credentials -->
+<p><strong>Delete this employee</strong></p>
+<form method="post" asp-page-handler="DeleteEmployee">
+    <div class="form-group">
+        <label for="deleteUsername">Username:</label>
+        <input type="text" class="form-control" id="deleteUsername" name="DeleteUsername" required>
+    </div>
+    <div class="form-group">
+        <label for="deletePassword">Password:</label>
+        <input type="password" class="form-control" id="deletePassword" name="DeletePassword" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Delete this employee</button>
+</form>
+
+<!-- Error message for incorrect delete credentials -->
+@if (ViewData["DeleteCredentialsError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["DeleteCredentialsError"]
+    </div>
+}
