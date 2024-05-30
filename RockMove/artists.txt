@@ -1,2 +1,10 @@
-1;elvis;48939848;xjnajdj;speed
-2;jodnand;john;john;john
+1;The Beatles;Rock/Pop;1960-1970;One of the most influential bands in music history. They revolutionized popular music with their varied repertoire, innovative studio work, and great commercial success.
+2;Bob Dylan;Folk/Rock;1960-present;An iconic singer-songwriter known for his poetic lyrics and social commentary. His music has influenced many generations of musicians.
+3;Madonna;Pop;1980-present;The Queen of Pop, who has defined and redefined pop music over several decades. She is known for her groundbreaking work in music videos and her image as a cultural icon.
+4;Michael Jackson;Pop/R&B;1970-2009;The King of Pop, known for his incredible dance moves, iconic music videos, and record-breaking album sales. His influence on music and culture is unparalleled.
+5;Nirvana;Grunge/Alternative Rock;1987-1994;Led by Kurt Cobain, Nirvana became a key player in the grunge movement of the 90s. Their album "Nevermind" defined a generation and transformed rock music.
+6;Beyoncé;R&B/Pop;1997-present;One of the most successful and influential artists of modern times. She is known for her powerful voice, innovative music videos, and her work for social justice.
+7;Elvis Presley;Rock and Roll;1954-1977;The King of Rock and Roll who popularized the genre and became a cultural icon. His charismatic performances and unique style made him one of the most significant artists of the 20th century.
+8;Prince;Pop/Funk/Rock;1978-2016;A musical innovator known for his eclectic style, extensive musical abilities, and theatrical performances. He blended elements from various genres and influenced countless artists.
+9;David Bowie;Rock/Glam Rock;1967-2016;One of the most innovative and influential artists in rock history. Bowie was known for his constant style changes, experimentation with different music genres, and his ability to foresee trends.
+10;Aretha Franklin;Soul/R&B;1956-2018;The Queen of Soul, known for her powerful voice and influence on soul music. She was a pioneer for African-American female artists and a symbolic figure in the civil rights movement.
