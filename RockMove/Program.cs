@@ -12,7 +12,8 @@ namespace RockMove
 {
     public class Program
     {
-        public static void Main(string[] args) // Application starts here
+        // Application starts here!!!
+        public static void Main(string[] args) 
         {
             // Building the web application
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
